@@ -1,0 +1,96 @@
+body {
+    width: 100vh;
+    height: 100vh;
+    background-color: rgb(46, 45, 45);
+
+}
+
+.center {
+    display: flex;
+    /* justify-content: center; */
+
+    width: 100%;
+    
+}
+.player {
+    width: 250px;
+    height: 450px;
+    background-image: linear-gradient(gray, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10%;
+    padding: 2rem;
+    color: white;
+    box-shadow: 10px 10px 20px rgb(10, 10, 10);
+
+
+}
+/* imagen */
+.cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    box-shadow: 10px 10px 30px rgb(0, 0, 0);
+    
+}
+
+/* Title */
+.title {
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+/*Progres bar*/
+
+.progress_container {
+    height: .3rem;
+    background-color: gray;
+    width: 100%;
+}
+
+.progress {
+    background-color: rgb(87, 34, 173);
+    height: 100%;
+    box-shadow: -1px 1px 10px #fff;
+}
+
+/*Controls*/
+
+.controls {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;   
+}
+
+.controls button {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(31, 31, 31);
+    color: #fff;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
+
+.list_musics_container {
+    width: 50vh;
+    padding: 0;
+    color: blueviolet;
+}
+
+.musics {
+    width: 100%;
+    list-style-type: upper-roman;
+    
+}
+.musics a {
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    
+}
