@@ -21,10 +21,14 @@ const mp4 = new ListMusics();
 // mp4.loadMusic(htmlLi, htmlA, musics)
 
 // listMount()
-playButton.addEventListener("click", mp4.playMusic)
-nextButton.addEventListener("click", mp4.nextMusic)
+function EventosMp4 (nameClass) {
+playButton.addEventListener("click", nameClass.playMusic)
+nextButton.addEventListener("click", nameClass.nextMusic) 
+}
+EventosMp4(mp4)
 mp4.loadMusic()
 // mp4.select()
+
 
 
 

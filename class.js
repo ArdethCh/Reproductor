@@ -17,7 +17,7 @@ export class ListMusics {
       {
           titulo: "Imagine Dragons  Natural",
           file: "./music/Imagine Dragons - Natural.mp3",
-          cover: "./img/Imagine Dragons_cover.png"
+          cover: "./img/Imagine Dragons_cover.png",
       }
   ]
  
@@ -51,8 +51,7 @@ export class ListMusics {
 
   
   playMusic() {
-   
-    console.log(this.list);
+     
     if (audio.paused) {
       playButton.textContent = "Pause";
       audio.play()
@@ -63,20 +62,19 @@ export class ListMusics {
     }
   }
 
-
-
-
-
   nextMusic() {
+         const redirect = ListMusics
+    console.log(redirect.list);
 console.log(actualMusic)
-    if (this.actualMusic !== null) {
+    if (actualMusic !== null) {
         
         actualMusic++;
         console.log(actualMusic);
         console.log("Next");
         autor.textContent = this.list[actualMusic].titulo;
-        image.src = this.list[actualMusic].cover;   
         audio.src = this.list[actualMusic].file;
+        image.src = this.list[actualMusic].cover;   
+        
         
         audio.play()
     }
