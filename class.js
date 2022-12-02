@@ -1,30 +1,17 @@
-
 import { autor, image, music, audio, playButton } from "./main.js";
+import { list } from "./musicList.js";
+
 var actualMusic = null;
 
 export class ListMusics {
-  constructor() {
-        
-    // this.titulo = titulo;
-    // this.file = file;
-    // this.cover = cover;
-    this.list = [  
-      {
-          titulo: "blink 182  All The Small Things",
-          file: "./music/blink-182 - All The Small Things.mp3",
-          cover: "./img/blink 182.jpg"
-      },
-      {
-          titulo: "Imagine Dragons  Natural",
-          file: "./music/Imagine Dragons - Natural.mp3",
-          cover: "./img/Imagine Dragons_cover.png",
-      }
-  ]
- 
-   }
+  constructor(lista) {
+
+    this.list = lista
+
+  }
 
   loadMusic() {
-    
+
     this.list.forEach((cero, index) => {
       const htmlLi = document.createElement("li")
       const htmlA = document.createElement("a")
@@ -36,7 +23,6 @@ export class ListMusics {
     })
   }
 
-
   select(index) {
 
 	  if (index !== actualMusic) {
@@ -45,44 +31,42 @@ export class ListMusics {
 		  image.src = this.list[index].cover;
 		  audio.src = this.list[index].file;
 		  audio.play();
-	}
-	
+	  }
   }
-
   
   playMusic() {
-     
+
     if (audio.paused) {
       playButton.textContent = "Pause";
       audio.play()
-
     } else {
       playButton.textContent ="Play";
       audio.pause()
     }
   }
-
-  nextMusic() {
-         const redirect = ListMusics
-    console.log(redirect.list);
-console.log(actualMusic)
-    if (actualMusic !== null) {
-        
-        actualMusic++;
-        console.log(actualMusic);
-        console.log("Next");
-        autor.textContent = this.list[actualMusic].titulo;
-        audio.src = this.list[actualMusic].file;
-        image.src = this.list[actualMusic].cover;   
-        
-        
-        audio.play()
-    }
-
-  }
-
-
-
 }
 
+export function nextMusic() {
+     
+  if (actualMusic !== null && autor.textContent !== list[list.length -1].titulo) {
+      actualMusic++;
+      autor.textContent = list[actualMusic].titulo; 
+      image.src = list[actualMusic].cover; 
+      audio.src = list[actualMusic].file; 
+      return audio.play()
+  } 
+    console.log("No hay mas musicas en lista");
+}
+
+export function prevMusic() {
+  
+  if (actualMusic !== null && autor.textContent !== list[0].titulo) {
+    actualMusic--;
+    autor.textContent = list[actualMusic].titulo; 
+    image.src = list[actualMusic].cover; 
+    audio.src = list[actualMusic].file; 
+    return audio.play()
+} 
+  console.log("No hya musica anterior");
+}
 
